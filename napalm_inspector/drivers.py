@@ -1,3 +1,4 @@
+from builtins import super
 from napalm_inspector.exceptions import MissingData
 from napalm.ios import IOSDriver
 from napalm.nxos_ssh import NXOSSSHDriver
@@ -20,6 +21,7 @@ class DummyDevice:
 class OfflineIOSDriver(IOSDriver):
 
     def __init__(self, data):
+        super().__init__("127.0.0.1", "", "")
         self.device = DummyDevice(data)
 
 
