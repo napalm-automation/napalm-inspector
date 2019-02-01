@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/napalm-automation/napalm-inspector.svg?branch=develop)](https://travis-ci.org/napalm-automation/napalm-inspector)
+[![Coverage Status](https://coveralls.io/repos/github/napalm-automation/napalm-inspector/badge.svg?branch=develop)](https://coveralls.io/github/napalm-automation/napalm-inspector?branch=develop)
+
 NAPALM-Inspector
 ================
 
