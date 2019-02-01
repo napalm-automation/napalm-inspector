@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+      <div class="napalm-center">
+        <h1>Welcome to NAPALM-Inspector</h1>
+            <p>The goal of this application is to make it easier to troubleshoot Napalm getters. Especially with platforms where screen scraping is used the output from various commands can differ. If something isn't working with Napalm please try the getter using this tool and open a <a href="https://github.com/napalm-automation/napalm/issues">GitHub issue</a> based on the findings.</p>
+            <p>Test a getter <a href="{{ url_for('main.getters') }}">here</a>
+            <p>The NAPALM-Inspector project is available on <a href="https://github.com/napalm-automation/napalm-inspector">GitHub.</a>
+      </div>
+
+{% endblock %}
+
