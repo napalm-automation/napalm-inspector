@@ -4,8 +4,8 @@ from setuptools import find_packages, setup
 with open("requirements.txt", "r") as fs:
     reqs = [r for r in fs.read().splitlines() if (len(r) > 0 and not r.startswith("#"))]
 
-
-__author__ = "Patrick Ogenstad <patrick@ogenstad.com>"
+with open("README.md", "r") as fs:
+    long_description = fs.read()
 
 setup(
     name="napalm-inspector",
@@ -15,6 +15,8 @@ setup(
     author="Patrick Ogenstad",
     author_email="patrick@ogenstad.com",
     description="Web application to test NAPALM getters",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     classifiers=[
         "Topic :: Utilities",
         "Programming Language :: Python",
