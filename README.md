@@ -12,9 +12,7 @@ Installation
 ============
 
 ```bash
-git clone https://github.com/napalm-automation/napalm-inspector
-cd napalm-inspector
-pip install .
+pip install napalm-inspector
 export FLASK_APP=napalm_inspector
 flask run
 ```
