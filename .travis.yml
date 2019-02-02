@@ -1,0 +1,33 @@
+sudo: required
+
+language: python
+python:
+    - 2.7
+    - 3.6
+    - 3.6
+
+matrix:
+  include:
+      - python: 3.6
+        env: TOXENV=black
+      - python: 3.6
+        env: TOXENV=pylama
+
+install:
+    - pip install tox tox-travis coveralls
+
+script:
+    - tox
+
+deploy:
+  provider: pypi
+  user: ogenstad
+  password:
+    secure: N1fnrXFMsJ4+uc5hNwSQv4tw7/BNV8Fd/IjTvIbxVocloDAwf7+mnwB6CTj2WrN3B9/2BLWtZj20tcxp7qD6zugWJt4RqnnqCjHAGq2qu2p3SqtHYJ1tCnoJzaNrnrj1Oklyi58dlIR5qv5495Ig+2ghOfg/lRELfZUjuDHoQv7e6E9olGtuDpQ7sqLW4emU/9+gdm6ebE7+V9nuHQA2JGpQcDpqvhbzokCkrn96Xfmvorw9g1fCR6Me0AcsbcMYuCbJJbPJ6iWEdc60PyetT7l68DFDtIIEev91exPUWDYiSQhLDREOoDtCaDyVwJPM4ZHPOgyDveKu02//CMBJMkmYwbm+SapJ9F7JOrQLORKlerTmpRg+pm2ZpzkUb13F545z1CNP+r0+GGWSuci+ALdG3stiFdLf7RF/xxZ5RzYNWyFw6yFt+yEMDHJbkv3yGRNjNK6pNLPlvAmmz76BINplk4NeKz0REffvnEF56MxjqUFr4WA6ieCGF00F+ECifW53cv38h7rP3DPmYSgY4YDAtXTblwkzMYCz8U0Ob4vJgIsPs6YpVN3/tCNI/21rdvYiSpP0wgKQvPt67KuFeVInaHTARjUK3/XZfd/qGNgkrl+TSWAvVvQlhkZTUlJqBvnt23PHnvy3qu5KiBwlu5l+hSUERNiqgBaA8cwd4nA=
+  distributions: "sdist bdist_wheel"
+  on:
+    tags: true
+    branch: master
+
+after_success:
+- coveralls
